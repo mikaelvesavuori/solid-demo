@@ -1,14 +1,14 @@
 import { DemoEmailService } from './shared';
 
+/**
+ * This is a derived(sub)class of the DemoEmailService.
+ */
 class OtherEmailService extends DemoEmailService {
+  // "Extend" the sending functionality
   public async send(address: string) {
     // Do something before...
     await super.send(address);
     // Do something after...
-  }
-
-  public emailHtml() {
-    return `<h1>Hello World!</h1>`;
   }
 }
 

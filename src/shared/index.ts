@@ -3,19 +3,9 @@ const config = (name: string) => ({
 });
 
 export class DemoEmailService implements EmailService {
-  public validateEmailAddress(address: string) {
-    const { name, domain, tld } = this.splitEmail(address);
-
-    return (
-      name &&
-      name.length > 2 &&
-      domain &&
-      domain.length > 2 &&
-      tld &&
-      tld.length > 2
-    );
-  }
-
+  /**
+   * Orchestrate the sending of an email.
+   */
   public async send(address: string) {
     if (!this.validateEmailAddress(address))
       throw new Error('Invalid email address');
@@ -28,7 +18,20 @@ export class DemoEmailService implements EmailService {
     this.log(message);
   }
 
-  private splitEmail(address: string) {
+  protected validateEmailAddress(address: string) {
+    const { name, domain, tld } = this.splitEmail(address);
+
+    return (
+      name &&
+      name.length > 2 &&
+      domain &&
+      domain.length > 2 &&
+      tld &&
+      tld.length > 2
+    );
+  }
+
+  protected splitEmail(address: string) {
     const [name, domain] = address.split('@');
     const tld = address.split('.').pop();
 
@@ -39,7 +42,7 @@ export class DemoEmailService implements EmailService {
     };
   }
 
-  private log(message: string) {
+  protected log(message: string) {
     console.log(`Sent email: "${message}"`);
   }
 }

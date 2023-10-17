@@ -3,7 +3,7 @@ import { EmailService } from './shared';
 class EmailProvider {
   async send(address: string, content: string) {
     console.log(
-      `PROVIDER: Sending email to ${address} with content: ${content}`
+      `PROVIDER: Sending email to ${address} with content: "${content}"`
     );
   }
 }
