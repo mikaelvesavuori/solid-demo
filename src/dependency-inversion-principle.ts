@@ -1,4 +1,4 @@
-import { EmailService } from './base';
+import { EmailService } from './shared';
 
 class EmailProvider {
   async send(address: string, content: string) {

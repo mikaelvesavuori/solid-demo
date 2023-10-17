@@ -1,4 +1,4 @@
-import { DemoEmailService } from './base';
+import { DemoEmailService } from './shared';
 
 class OtherEmailService extends DemoEmailService {
   public async send(address: string) {
@@ -13,9 +13,11 @@ class OtherEmailService extends DemoEmailService {
 }
 
 (async () => {
-  const emailService = new DemoEmailService();
+  const emailService1 = new DemoEmailService();
+  const address1 = 'sam.person.1@company.xyz';
+  await emailService1.send(address1);
+
   const emailService2 = new OtherEmailService();
-  const address = 'sam.person@company.xyz';
-  await emailService.send(address);
-  await emailService2.send(address);
+  const address2 = 'sam.person.2@company.xyz';
+  await emailService2.send(address2);
 })();

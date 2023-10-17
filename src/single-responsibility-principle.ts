@@ -1,6 +1,33 @@
-function validateEmailAddress(address: string) {
+// Orchestrates a "use case"
+function send(address: string) {
+  if (!validateEmailAddress(address)) throw new Error('Invalid email address');
+
+  const name = splitEmail(address).name;
+  const message = config(name).messageTemplate;
+
+  // Implement sending the message...
+
+  log(message);
+}
+
+const config = (name: string) => ({
+  messageTemplate: `Hello ${name}! Thanks for getting in touch. A customer sales agent will respond within 24 hours. Have a nice day!`
+});
+
+function splitEmail(address: string) {
   const [name, domain] = address.split('@');
   const tld = address.split('.').pop();
+
+  return {
+    name,
+    domain,
+    tld
+  };
+}
+
+function validateEmailAddress(address: string) {
+  const { name, domain, tld } = splitEmail(address);
+
   return (
     name &&
     name.length > 2 &&
@@ -11,15 +38,8 @@ function validateEmailAddress(address: string) {
   );
 }
 
-function send(address: string) {
-  if (!validateEmailAddress(address)) throw new Error('Invalid email address');
-
-  const content = `Hello ${name}! Thanks for getting in touch. A customer sales agent will respond within 24 hours. Have a nice day!`;
-  log(`Sent email to ${address}: ${content}`);
-}
-
 function log(message: string) {
-  console.log(message);
+  console.log(`Sent email: "${message}"`);
 }
 
 send('sam.person@company.xyz');

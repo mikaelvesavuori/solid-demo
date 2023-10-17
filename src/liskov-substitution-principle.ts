@@ -1,4 +1,4 @@
-import { EmailService } from './base';
+import { EmailService } from './shared';
 
 class OtherEmailService implements EmailService {
   private validateEmailAddress(address: string) {

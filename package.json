@@ -16,6 +16,14 @@
     "design-patterns",
     "learning"
   ],
+  "scripts": {
+    "start": "npx tsx src/start.ts",
+    "s": "npx tsx src/single-responsibility-principle.ts",
+    "o": "npx tsx src/open-closed-principle.ts",
+    "l": "npx tsx src/liskov-substitution-principle.ts",
+    "i": "npx tsx src/interface-segregation-principle.ts",
+    "d": "npx tsx src/dependency-inversion-principle.ts"
+  },
   "devDependencies": {
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "5",
@@ -26,7 +34,6 @@
     "eslint-plugin-jsdoc": "latest",
     "eslint-plugin-prettier": "4",
     "prettier": "2",
-    "ts-node": "latest",
-    "typescript": "5"
+    "tsx": "3"
   }
 }

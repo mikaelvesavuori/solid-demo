@@ -2,20 +2,24 @@
 
 In the SILOD ("siloed") order:
 
-1. Start
-2. SRP
-3. ISP (look at email service + interface in `base.ts`)
-4. LSP
-5. OCP
-6. DIP
+0. Start
+1. `SRP`: Begin to break up functionality and make it semantic and clean.
+2. `ISP`: Look at email service + interface in `base.ts`
+3. `LSP`: TODO
+4. `OCP`: TODO
+5. `DIP`: TODO
 
-Also, consider seeing these other resources:
+## Running the code
 
-## Five Minutes or Less
+You can install the things with `npm install`. For running the starting code, run `npm start`. Then, for each respective letter of the SOLID principles you want to run, use `npm run s|o|l|i|d`.
 
-- [5 Minutes or Less: SOLID](https://github.com/mikaelvesavuori/5-minutes-or-less-solid)
+Or, if you're lazy, you can also copy the individual TS file's contents into the [TypeScript playground](https://www.typescriptlang.org/play) if you want to avoid cloning and installing anything at all.
 
-## The SOLID Principles
+---
+
+## More resources
+
+### The SOLID Principles
 
 The principles in their mnemonic order:
 
@@ -25,8 +29,6 @@ The principles in their mnemonic order:
 - [Interface Segregation Principle](src/interface-segregation-principle.ts)
 - [Dependency Inversion Principle](src/dependency-inversion-principle.ts)
 
-## Running the code
+### Five Minutes or Less
 
-You can install the things with `npm install` and then just go at each file with `npx ts-node src/{filename}.ts`.
-
-Or, if you're lazy, you can also copy the individual TS file's contents into the [TypeScript playground](https://www.typescriptlang.org/play) if you want to avoid cloning and installing anything at all.
+- [5 Minutes or Less: SOLID](https://github.com/mikaelvesavuori/5-minutes-or-less-solid)

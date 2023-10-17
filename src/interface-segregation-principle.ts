@@ -1,6 +1,4 @@
-// First run this, then use the commented lines and remove the Something + Thing combo
-
-//import { DemoEmailService } from './base';
+// Version 1
 
 class Something implements Thing {
   public makeScaryNoise = () => 'Oooooo~~~~~~~~oooooo~~~~~';
@@ -10,7 +8,21 @@ interface Thing {
   makeScaryNoise: () => string;
 }
 
-(async () => {
-  //const emailService = new DemoEmailService();
-  //await emailService.send('sam.person@company.xyz');
-})();
+async function main() {
+  //
+}
+
+main();
+
+/*
+// Version 2
+
+import { DemoEmailService } from './shared/shared';
+
+async function main() {
+  const emailService = new DemoEmailService();
+  await emailService.send('sam.person@company.xyz');
+}
+
+main();
+*/
