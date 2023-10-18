@@ -8,6 +8,10 @@ class SomethingScary implements Thing {
   public makeNoise() {
     console.log('Boooooo~~~~~~~~oooooo~~~~~ 👻');
   }
+
+  public hide() {
+    console.log('Hiding...');
+  }
 }
 
 class SomethingCute implements Thing {
@@ -20,8 +24,10 @@ async function demo() {
   const scary = new SomethingScary();
   const cute = new SomethingCute();
 
-  scary.makeNoise();
   cute.makeNoise();
+
+  scary.hide();
+  scary.makeNoise();
 }
 
 demo();
