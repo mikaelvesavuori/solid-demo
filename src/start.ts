@@ -1,9 +1,11 @@
 /*
  * Requirements:
- * 1. Validate
+ * 1. Validate (and handle errors)
  * 2. Send
  * 3. Log
  */
+
+// An example of your everyday, bog-standard one-file "dirty" implementation.
 
 const addr = 'sam.person@company.xyz';
 const [n, d] = addr.split('@');

@@ -1,13 +1,15 @@
 # SOLID demonstration using TypeScript
 
+This repo demonstrates the SOLID principles with the example of a basic imaginary email service, in which we need to validate the address, send a message, and log the transaction. We'll start with a basic "dirty implementation" and introduce the SOLID concepts one by one.
+
 In the SILOD ("siloed") order:
 
 0. Start
 1. `SRP`: Begin to break up functionality and make it semantic and clean.
-2. `ISP`: Look at email service + interface in `base.ts`
-3. `LSP`: TODO
-4. `OCP`: TODO
-5. `DIP`: TODO
+2. `ISP`: Working towards interfaces, not concretions.
+3. `LSP`: Making subclasses without breaking superclasses.
+4. `OCP`: Extending behavior of superclass methods without breaking them.
+5. `DIP`: Creating flexibility by decoupling dependencies and injecting them where needed.
 
 ## Running the code
 

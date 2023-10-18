@@ -1,4 +1,8 @@
-// Version 1
+// General demo
+
+interface Thing {
+  makeNoise: () => void;
+}
 
 class SomethingScary implements Thing {
   public makeNoise() {
@@ -12,11 +16,7 @@ class SomethingCute implements Thing {
   }
 }
 
-interface Thing {
-  makeNoise: () => void;
-}
-
-async function main() {
+async function demo() {
   const scary = new SomethingScary();
   const cute = new SomethingCute();
 
@@ -24,17 +24,15 @@ async function main() {
   cute.makeNoise();
 }
 
-main();
+demo();
 
-/*
-// Version 2
+// Interface Segregation Principle for the email
 
 import { DemoEmailService } from './shared';
 
-async function main() {
+async function email() {
   const emailService = new DemoEmailService();
   await emailService.send('sam.person@company.xyz');
 }
 
-main();
-*/
+email();

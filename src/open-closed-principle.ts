@@ -1,10 +1,9 @@
 import { DemoEmailService } from './shared';
 
 /**
- * This is a derived(sub)class of the DemoEmailService.
+ * This is a derived(sub)class of the DemoEmailService, "extending" the `send()` functionality.
  */
 class OtherEmailService extends DemoEmailService {
-  // "Extend" the sending functionality
   public async send(address: string) {
     // Do something before...
     await super.send(address);

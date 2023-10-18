@@ -1,3 +1,5 @@
+send('sam.person@company.xyz');
+
 // Orchestrates a "use case"
 function send(address: string) {
   if (!validateEmailAddress(address)) throw new Error('Invalid email address');
@@ -41,5 +43,3 @@ function validateEmailAddress(address: string) {
 function log(message: string) {
   console.log(`Sent email: "${message}"`);
 }
-
-send('sam.person@company.xyz');

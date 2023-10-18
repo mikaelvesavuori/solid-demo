@@ -1,17 +1,17 @@
-import { EmailService } from './shared';
+import { DemoEmailService } from './shared';
 
 /**
- * The OtherEmailService demonstrates the LSP by being a narrow, yet valid, subset of the superclass.
+ * The OtherEmailService demonstrates the LSP by making a subclass that is interchangeable with the superclass.
+ * The new functionality is added to the subclass, but the superclass remains unchanged.
  */
-class OtherEmailService implements EmailService {
-  public async send(address: string): Promise<void> {
-    if (!address) throw new Error('Invalid email address');
-
-    console.log('Sending email to:', address);
+class OtherEmailService extends DemoEmailService {
+  reformatMessage() {
+    // Do something to the message before sending
   }
 }
 
 (async () => {
   const emailService = new OtherEmailService();
+  emailService.reformatMessage();
   await emailService.send('sam.person@company.xyz');
 })();
