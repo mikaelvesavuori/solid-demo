@@ -10,8 +10,10 @@ class OtherEmailService extends DemoEmailService {
   }
 }
 
-(async () => {
+async function main() {
   const emailService = new OtherEmailService();
   emailService.reformatMessage();
   await emailService.send('sam.person@company.xyz');
-})();
+}
+
+main();

@@ -11,7 +11,7 @@ class OtherEmailService extends DemoEmailService {
   }
 }
 
-(async () => {
+async function main() {
   const emailService1 = new DemoEmailService();
   const address1 = 'sam.person.1@company.xyz';
   await emailService1.send(address1);
@@ -19,4 +19,6 @@ class OtherEmailService extends DemoEmailService {
   const emailService2 = new OtherEmailService();
   const address2 = 'sam.person.2@company.xyz';
   await emailService2.send(address2);
-})();
+}
+
+main();

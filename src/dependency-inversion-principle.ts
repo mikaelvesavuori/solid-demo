@@ -21,8 +21,10 @@ class EmailServiceWithProvider implements EmailService {
   }
 }
 
-(async () => {
+async function main() {
   const provider = new EmailProvider();
   const emailService = new EmailServiceWithProvider(provider);
   await emailService.send('sam.person@company.xyz');
-})();
+}
+
+main();
