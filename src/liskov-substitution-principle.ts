@@ -6,7 +6,7 @@ import { DemoEmailService } from './shared';
  */
 class OtherEmailService extends DemoEmailService {
   reformatMessage() {
-    // Do something to the message before sending
+    // Do something to the message
   }
 }
 
